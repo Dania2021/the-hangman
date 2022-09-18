@@ -18,6 +18,7 @@ def display_menu():
         if option == '1':
             game_options = False
         elif option == '2':
+            game_rules()
             game_options = False
         elif option == '3':
             opt = input(
@@ -46,6 +47,22 @@ def display_menu():
             print(
                 '\033[93m Did not press 1, 2 or 3...Please try again\n'
                 )
+
+
+def game_rules():
+    """
+    Display rules of the game
+    """
+    print(game_title)
+    print('')
+    print('\033[1m                  Game Rules \033[93m\n\n')
+    print(
+        ' * To play hangman, all you need to do is to guess the word one '
+        'at a time.\n * Type a letter of your choice and hit enter.\n * If '
+        'your guess is correct, the letter will show within the hidden'
+        'word.\n * If your guess is incorrect, a section of hangman will'
+        'will appear.\n * Keep guessing until you guess the correct word'
+        'or you run out of tries')
 
 
 display_menu()
