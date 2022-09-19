@@ -1,6 +1,7 @@
 """
 All imports
 """
+import os
 from title import game_title
 
 
@@ -51,8 +52,10 @@ def display_menu():
 
 def game_rules():
     """
-    Display rules of the game
+    Display rules of the game and ask if user is ready to play.
     """
+    os.system("cls" if os.name == "nt" else "clear")
+    rules = True
     print(game_title)
     print('')
     print('\033[1m                  Game Rules \033[93m\n\n')
@@ -63,6 +66,25 @@ def game_rules():
         'word.\n * If your guess is incorrect, a section of hangman will'
         'will appear.\n * Keep guessing until you guess the correct word'
         'or you run out of tries')
+
+    print('\n')
+    ready = input(
+        '\033[93m Are you ready to start the game?\033[94m Yes or No\n'
+       )
+
+    while rules:
+        if ready == 'y' or ready == 'yes':
+            print('Hello')
+            rules = False
+        elif ready == 'n' or ready == 'no':
+            print(game_title)
+            display_menu()
+            rules = False
+        else:
+            print('\033[93m Invalid input please try again.\033[94m')
+            print('\n')
+            print('\n')
+            ready = input('\033[93mPress y for Yes or n for No\033[94m \n')
 
 
 display_menu()
