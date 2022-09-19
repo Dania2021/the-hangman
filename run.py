@@ -5,10 +5,19 @@ import os
 from title import game_title
 
 
+def clear_terminal():
+    """
+    clear the terminal
+    """
+    os.system("cls" if os.name == "nt" else "clear")
+
+
 def display_menu():
     """
     Display game header and choice of menu options
     """
+    clear_terminal()
+    print(game_title)
     game_options = True
 
     while game_options:
@@ -54,7 +63,7 @@ def game_rules():
     """
     Display rules of the game and ask if user is ready to play.
     """
-    os.system("cls" if os.name == "nt" else "clear")
+    clear_terminal()
     rules = True
     print(game_title)
     print('')
