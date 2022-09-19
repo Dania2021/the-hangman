@@ -26,6 +26,7 @@ def display_menu():
         print('\033[94m Press 3 \033[0m to quit the game')
         option = input('\033[93m Press the number to continue\n\033[94m')
         if option == '1':
+            get_user_name()
             game_options = False
         elif option == '2':
             game_rules()
@@ -47,6 +48,7 @@ def display_menu():
                     print(game_title)
                     break
                 else:
+                    print('\n')
                     print('\033[93m Invalid input please try again.\n\033[94m')
                     print('\n')
                     print('\n')
@@ -83,17 +85,39 @@ def game_rules():
 
     while rules:
         if ready == 'y' or ready == 'yes':
-            print('Hello')
+            get_user_name()
             rules = False
         elif ready == 'n' or ready == 'no':
             print(game_title)
             display_menu()
             rules = False
         else:
+            print('\n')
             print('\033[93m Invalid input please try again.\033[94m')
             print('\n')
             print('\n')
             ready = input('\033[93mPress y for Yes or n for No\033[94m \n')
+
+
+def get_user_name():
+    """
+    Display the user name with a welcome message
+    """
+    clear_terminal()
+    print(game_title)
+    user_name = True
+
+    while user_name:
+        user = input('\033[93m Please enter your name.\033[94m\n ')
+        if user.isalpha():
+            print(f'\033[0m Welcome \033[94m{user}\033[0m, nice to meet you')
+            user_name = False
+        else:
+            print('\n')
+            print('\033[93m Invalid input please try again.\033[94m')
+            print('\n')
+            print('\n')
+            print('\033[93m Name can only be letterrs.\033[94m\n')
 
 
 display_menu()
