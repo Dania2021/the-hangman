@@ -2,6 +2,7 @@
 All imports
 """
 import os
+import random
 from title import game_title
 
 
@@ -111,6 +112,7 @@ def get_user_name():
         user = input('\033[93m Please enter your name.\033[94m\n ')
         if user.isalpha():
             print(f'\033[0m Welcome \033[94m{user}\033[0m, nice to meet you')
+            start_game()
             user_name = False
         else:
             print('\n')
@@ -119,5 +121,29 @@ def get_user_name():
             print('\n')
             print('\033[93m Name can only be letterrs.\033[94m\n')
 
+
+word = ['APPLE', 'BANANA', 'ORANGE', 'GRAPES']
+
+
+def start_game():
+    """
+    Starts the game by asking user for letter input
+    """
+    lives = 6
+    guess_letter = []
+    words = random.choice(word)
+    words_letter = set(words)
+    clear_terminal()
+    print(game_title)
+    while lives > 0 and len(words_letter) > 0:
+        hidden_word = [
+            letter if letter in guess_letter else "_" for letter in words
+            ]
+        print("\n")
+        print(" ".join(hidden_word))
+        print("\n")
+        users_guess = input("\033[93m Please enter a letter:\n").upper()
+        print("\n")
+        
 
 display_menu()
