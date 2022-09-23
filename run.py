@@ -4,6 +4,7 @@ All imports
 import os
 import random
 from title import game_title
+from gallows import hangman_img
 
 
 def clear_terminal():
@@ -139,6 +140,7 @@ def start_game():
         hidden_word = [
             letter if letter in guess_letter else "_" for letter in words
             ]
+        print(hangman_img(lives))
         print("\n")
         print(" ".join(hidden_word))
         print("\n")
@@ -193,6 +195,19 @@ def start_game():
         except ValueError as err:
             print(f'{err} \033[93m Please try again \033[94m')
             continue
+
+    if lives != 0:
+        clear_terminal()
+        print(game_title)
+        print('\033[93mCongratulations! You WON')
+    else:
+        clear_terminal()
+        print(game_title)
+        print(hangman_img(lives))
+        print(
+            f'\033[93mYou are out of lives \n'
+            f'The word you have to guess was \033[94m{words}'
+        )
    
 
 display_menu()
