@@ -1,0 +1,35 @@
+"""
+Words
+"""
+word = [
+         'BOARD',
+         'HOME',
+         'MONK',
+         'LION',
+         'DECK',
+         'FALL',
+         'FAITH',
+         'CORN',
+         'THICK',
+         'LIST',
+         'DANCE',
+         'WASTE',
+         'DAIRY',
+         'WINE',
+         'FEW',
+         'TIRE',
+         'TEXT',
+         'AGILE',
+         'CHILD',
+         'WRECK',
+         'WHITE',
+         'CARVE',
+         'RUMOR',
+         'WIDTH',
+         'PILE',
+         'BAKE',
+         'BALL',
+         'VIDEO',
+         'FLOOD',
+         'PEACE'
+         ]

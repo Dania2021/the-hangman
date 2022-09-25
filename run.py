@@ -208,6 +208,6 @@ def start_game():
             f'\033[93mYou are out of lives \n'
             f'The word you have to guess was \033[94m{words}'
         )
-   
+
 
 display_menu()
