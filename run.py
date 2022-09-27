@@ -3,9 +3,27 @@ All imports
 """
 import os
 import random
+import gspread
+from google.oauth2.service_account import Credentials
 from title import game_title
 from gallows import hangman_img
 from words import word
+
+SCOPE = [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive"
+    ]
+
+CREDS = Credentials.from_service_account_file('creds.json')
+SCOPEd_CREDS = CREDS.with_scopes(SCOPE)
+GSPREAD_CLIENT = gspread.authorize(SCOPEd_CREDS)
+SHEET = GSPREAD_CLIENT.open('the_hangman')
+
+
+high_score = SHEET.worksheet('score')
+scores = high_score.get_all_records()
+player_score = {}
 
 
 def clear_terminal():
@@ -57,7 +75,7 @@ def display_menu():
                     print('\n')
                     opt = input(
                         '\033[93m Press y for Yes or n for No..\n\033[94m'
-                        )
+                    )
         else:
             print(
                 '\033[93m Did not press 1, 2 or 3...Please try again\n'
