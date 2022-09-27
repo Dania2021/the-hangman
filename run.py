@@ -5,6 +5,7 @@ import os
 import random
 from title import game_title
 from gallows import hangman_img
+from words import word
 
 
 def clear_terminal():
@@ -75,9 +76,9 @@ def game_rules():
     print(
         ' * To play hangman, all you need to do is to guess the word one '
         'at a time.\n * Type a letter of your choice and hit enter.\n * If '
-        'your guess is correct, the letter will show within the hidden'
-        'word.\n * If your guess is incorrect, a section of hangman will'
-        'will appear.\n * Keep guessing until you guess the correct word'
+        'your guess is correct, the letter will show within the hidden '
+        'word.\n * If your guess is incorrect, a section of hangman will '
+        'appear.\n * Keep guessing until you guess the correct word'
         'or you run out of tries')
 
     print('\n')
@@ -113,7 +114,7 @@ def get_user_name():
         user = input('\033[93m Please enter your name.\033[94m\n ')
         if user.isalpha():
             print(f'\033[0m Welcome \033[94m{user}\033[0m, nice to meet you')
-            start_game()
+            difficulty_level()
             user_name = False
         else:
             print('\n')
@@ -123,16 +124,45 @@ def get_user_name():
             print('\033[93m Name can only be letterrs.\033[94m\n')
 
 
-word = ['APPLE', 'BANANA', 'ORANGE', 'GRAPES']
+def difficulty_level():
+    """
+    Gets level value from user and creates word list accordingly
+    """
+    clear_terminal()
+    print(game_title)
+    choose = True
+    while choose:
+        choose_level = input(
+            '\033[93m What difficulty level you want to choose:\n\n'
+            ' 1. Easy\n 2. Hard\n \033[94m\n '
+        )
+        if choose_level == '1':
+            easy_words = [easy for easy in word if len(easy) < 5]
+            words = random.choice(easy_words)
+            start_game(words)
+            choose = False
+        elif choose_level == '2':
+            hard_words = [hard for hard in word if len(hard) > 4]
+            words = random.choice(hard_words)
+            start_game(words)
+            choose = False
+        else:
+            print('\n')
+            print('\033[93m Invalid input please try again.\033[94m')
+            print('\n')
+            print('\n')
+            print(
+                '\033[93m Press 1 for Easy Game and Press 2 for Hard Game.'
+                '\033[94m\n'
+            )
 
 
-def start_game():
+def start_game(words):
     """
     Starts the game by asking user for letter input
     """
     lives = 6
     guess_letter = []
-    words = random.choice(word)
     words_letter = set(words)
     clear_terminal()
     print(game_title)
