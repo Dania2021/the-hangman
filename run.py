@@ -122,8 +122,9 @@ def game_rules():
 
 def get_user_name():
     """
-    Display the user name with a welcome message
+    Display the user name with a welcome message and reset game score
     """
+    global user
     clear_terminal()
     print(game_title)
     user_name = True
@@ -132,6 +133,8 @@ def get_user_name():
         user = input('\033[93m Please enter your name.\033[94m\n ')
         if user.isalpha():
             print(f'\033[0m Welcome \033[94m{user}\033[0m, nice to meet you')
+            player_score[user] = 0
+
             difficulty_level()
             user_name = False
         else:
@@ -248,14 +251,55 @@ def start_game(words):
         clear_terminal()
         print(game_title)
         print('\033[93mCongratulations! You WON')
+        print(f'You guessed the word {words} correctly \n')
+        while True:
+            play_again_after_win = input(
+                '\033[93m Would you like to play again? ( Y / N ) \033[94m'
+            ).upper()
+            if play_again_after_win == 'Y':
+                player_score[user] += 5
+                difficulty_level()
+            elif play_again_after_win == 'N':
+                player_score[user] += 5
+                if (user not in scores[0].keys()):
+                    scores[0][user] = player_score[user]
+                    print(
+                        f'{user} your final score is'
+                        f'\033[94m {player_score[user]}'
+                        )
+                    exit()
+                elif (player_score[user] > scores[0][user]):
+                    scores[0][user] = player_score[user]
+                    exit()
+                else:
+                    display_menu()
     else:
         clear_terminal()
         print(game_title)
         print(hangman_img(lives))
         print(
-            f'\033[93mYou are out of lives \n'
-            f'The word you have to guess was \033[94m{words}'
+            f'\033[93m You are out of lives \n'
+            f' The word you have to guess was \033[94m{words}'
         )
+        if (user not in scores[0].keys()):
+            scores[0][user] = player_score[user]
+            exit()
+        elif (player_score[user] > scores[0][user]):
+            scores[0][user] = player_score[user]
+            exit()
+        else:
+            display_menu()
+        while True:
+            play_again_after_lose = input(
+                '\033[93m Would you like to play again? ( Y / N ) \033[94m'
+            ).upper()
+            if play_again_after_lose == 'Y':
+                difficulty_level()
+            elif play_again_after_lose == 'N':
+                display_menu()
+            else:
+                print("\033[93m Please choose Y for Yes and N for No:")
 
 
-display_menu()
+if __name__ == "__main__":
+    display_menu()
