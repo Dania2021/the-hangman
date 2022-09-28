@@ -3,6 +3,7 @@ All imports
 """
 import os
 import random
+import operator
 import gspread
 from google.oauth2.service_account import Credentials
 from title import game_title
@@ -44,6 +45,31 @@ def update_highscores_sheet():
     high_score.batch_update(update_results)
 
 
+def high_scores():
+    '''
+    Get and sort data from google sheet.
+    Return top 5 highscore items.
+    '''
+    scores = high_score.get_all_records()
+    clear_terminal()
+    print(game_title)
+    ordered_scores = (dict(sorted(scores[0].items(),
+                      key=operator.itemgetter(1), reverse=True)[:5]))
+    for key, val in ordered_scores.items():
+        print(f'{key} : {val}')
+    print('\n')
+    while True:
+        back = input(
+            '\033[94m Go back to main menu? (Press Y)\033[94m'
+            ).upper()
+        if back == 'Y':
+            clear_terminal()
+            print(game_title)
+            display_menu()
+        else:
+            print('\033[94m Please try again')
+
+
 def display_menu():
     """
     Display game header and choice of menu options
@@ -67,15 +93,15 @@ def display_menu():
             opt = input(
                 '\033[93m Are you sure you want to quit?'
                 '\033[94m Yes or No\n'
-                )
+                ).upper()
             while game_options:
-                if opt == 'y' or opt == 'yes':
+                if opt == 'Y':
                     print(
                         '\033[93m You have successfully quit,'
                         'see you next time \n'
                         )
                     exit()
-                elif opt == 'n' or opt == 'no':
+                elif opt == 'N':
                     print('\n')
                     print(game_title)
                     break
@@ -113,13 +139,13 @@ def game_rules():
     print('\n')
     ready = input(
         '\033[93m Are you ready to start the game?\033[94m Yes or No\n'
-       )
+       ).upper()
 
     while rules:
-        if ready == 'y' or ready == 'yes':
+        if ready == 'Y' or ready == 'YES':
             get_user_name()
             rules = False
-        elif ready == 'n' or ready == 'no':
+        elif ready == 'N' or ready == 'NO':
             print(game_title)
             display_menu()
             rules = False
@@ -128,7 +154,7 @@ def game_rules():
             print('\033[93m Invalid input please try again.\033[94m')
             print('\n')
             print('\n')
-            ready = input('\033[93mPress y for Yes or n for No\033[94m \n')
+            ready = input('\033[93mPress Y for Yes or N for No\033[94m \n')
 
 
 def get_user_name():
@@ -272,16 +298,18 @@ def start_game(words):
                 difficulty_level()
             elif play_again_after_win == 'N':
                 player_score[user] += 5
-                if (user not in scores[0].keys()):
+                if user not in scores[0].keys():
                     scores[0][user] = player_score[user]
                     print(
                         f'{user} your final score is'
                         f'\033[94m {player_score[user]}'
                         )
                     update_highscores_sheet()
-                elif (player_score[user] > scores[0][user]):
+                    high_scores()
+                elif player_score[user] > scores[0][user]:
                     scores[0][user] = player_score[user]
                     update_highscores_sheet()
+                    high_scores()
                 else:
                     display_menu()
     else:
@@ -296,12 +324,14 @@ def start_game(words):
             f' {user} your final score is'
             f'\033[94m {player_score[user]}'
         )
-        if (user not in scores[0].keys()):
+        if user not in scores[0].keys():
             scores[0][user] = player_score[user]
             update_highscores_sheet()
-        elif (player_score[user] > scores[0][user]):
+            high_scores()
+        elif player_score[user] > scores[0][user]:
             scores[0][user] = player_score[user]
             update_highscores_sheet()
+            high_scores()
         else:
             display_menu()
         while True:
