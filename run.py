@@ -33,6 +33,17 @@ def clear_terminal():
     os.system("cls" if os.name == "nt" else "clear")
 
 
+def update_highscores_sheet():
+    '''
+    Add user name and score to google sheet
+    '''
+    keys = [str(eachvalue) for eachvalue in scores[0].keys()]
+    values = [str(eachvalue) for eachvalue in scores[0].values()]
+    update_results = [{'range': 'A1:ZZZ1', 'values': [keys]},
+                      {'range': 'A2:ZZZ2', 'values': [values]}]
+    high_score.batch_update(update_results)
+
+
 def display_menu():
     """
     Display game header and choice of menu options
@@ -267,10 +278,10 @@ def start_game(words):
                         f'{user} your final score is'
                         f'\033[94m {player_score[user]}'
                         )
-                    exit()
+                    update_highscores_sheet()
                 elif (player_score[user] > scores[0][user]):
                     scores[0][user] = player_score[user]
-                    exit()
+                    update_highscores_sheet()
                 else:
                     display_menu()
     else:
@@ -281,12 +292,16 @@ def start_game(words):
             f'\033[93m You are out of lives \n'
             f' The word you have to guess was \033[94m{words}'
         )
+        print(
+            f' {user} your final score is'
+            f'\033[94m {player_score[user]}'
+        )
         if (user not in scores[0].keys()):
             scores[0][user] = player_score[user]
-            exit()
+            update_highscores_sheet()
         elif (player_score[user] > scores[0][user]):
             scores[0][user] = player_score[user]
-            exit()
+            update_highscores_sheet()
         else:
             display_menu()
         while True:
