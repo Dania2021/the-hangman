@@ -53,21 +53,22 @@ def high_scores():
     scores = high_score.get_all_records()
     clear_terminal()
     print(game_title)
+    print('\033[1m                  High Scores \033[93m\n\n')
     ordered_scores = (dict(sorted(scores[0].items(),
                       key=operator.itemgetter(1), reverse=True)[:5]))
     for key, val in ordered_scores.items():
-        print(f'{key} : {val}')
+        print(f'\033[93m{key} : \033[0m{val}')
     print('\n')
     while True:
         back = input(
-            '\033[94m Go back to main menu? (Press Y)\033[94m'
+            '\033[93m Go back to main menu? (Press Y)\033[94m'
             ).upper()
         if back == 'Y':
             clear_terminal()
             print(game_title)
             display_menu()
         else:
-            print('\033[94m Please try again')
+            print('\033[93m Please try again')
 
 
 def display_menu():
@@ -81,7 +82,8 @@ def display_menu():
     while game_options:
         print('\033[94m Press 1 \033[0m to start the game')
         print('\033[94m Press 2 \033[0m to view the rules')
-        print('\033[94m Press 3 \033[0m to quit the game')
+        print('\033[94m Press 3 \033[0m to view high scores')
+        print('\033[94m Press 4 \033[0m to quit the game')
         option = input('\033[93m Press the number to continue\n\033[94m')
         if option == '1':
             get_user_name()
@@ -90,6 +92,9 @@ def display_menu():
             game_rules()
             game_options = False
         elif option == '3':
+            high_scores()
+            game_options = False
+        elif option == '4':
             opt = input(
                 '\033[93m Are you sure you want to quit?'
                 '\033[94m Yes or No\n'
@@ -111,7 +116,7 @@ def display_menu():
                     print('\n')
                     print('\n')
                     opt = input(
-                        '\033[93m Press y for Yes or n for No..\n\033[94m'
+                        '\033[93m Press Y for Yes or N for No..\n\033[94m'
                     )
         else:
             print(
@@ -154,7 +159,7 @@ def game_rules():
             print('\033[93m Invalid input please try again.\033[94m')
             print('\n')
             print('\n')
-            ready = input('\033[93mPress Y for Yes or N for No\033[94m \n')
+            ready = input('\033[93m Press Y for Yes or N for No\033[94m \n')
 
 
 def get_user_name():
@@ -233,28 +238,28 @@ def start_game(words):
         print(" ".join(hidden_word))
         print("\n")
         users_guess = input(
-            "\033[93mPlease enter a letter: \033[94m\n"
+            "\033[93m Please enter a letter: \033[94m\n"
             ).upper()
         print("\n")
         try:
             if len(users_guess) > 1:
                 raise ValueError(
-                    f'\033[93mYou can only guess 1 letter at a time '
+                    f'\033[93m You can only guess 1 letter at a time '
                     f'\033[93m You guessed \033[94m{len(users_guess)} letter.'
                     )
             elif not users_guess.isalpha():
                 raise ValueError(
-                    f'\033[93mYou can only guess letter '
+                    f'\033[93m You can only guess letter '
                     f'\033[93m You guessed \033[94m{users_guess},'
                     '\033[93mis not a letter.'
                 )
             elif len(users_guess) == 1 and users_guess.isalpha():
                 if users_guess in guess_letter:
                     raise ValueError(
-                        f'\033[93mYou have already guessed'
+                        f'\033[93m You have already guessed'
                         f'\033[94m {users_guess}.'
                         )
-                    print('\033[93mYou have these letters so far \033[94m')
+                    print('\033[93m You have these letters so far \033[94m')
                     print(' '.join(guess_letter))
                 elif users_guess not in words:
                     clear_terminal()
@@ -263,9 +268,9 @@ def start_game(words):
                         f'\033[94m{users_guess} \033[1;31m is not in the word'
                         )
                     lives -= 1
-                    print(f'\033[0mNumber of lives left: {lives} \n')
+                    print(f'\033[0m Number of lives left: {lives} \n')
                     guess_letter.append(users_guess)
-                    print('\033[93mYou have these letters so far \033[94m')
+                    print('\033[93m You have these letters so far \033[94m')
                     print(' '.join(sorted(guess_letter)))
                 else:
                     clear_terminal()
@@ -287,8 +292,8 @@ def start_game(words):
     if lives != 0:
         clear_terminal()
         print(game_title)
-        print('\033[93mCongratulations! You WON')
-        print(f'You guessed the word {words} correctly \n')
+        print('\033[93m Congratulations! You WON')
+        print(f' You guessed the word {words} correctly \n')
         while True:
             play_again_after_win = input(
                 '\033[93m Would you like to play again? ( Y / N ) \033[94m'
@@ -305,11 +310,11 @@ def start_game(words):
                         f'\033[94m {player_score[user]}'
                         )
                     update_highscores_sheet()
-                    high_scores()
+                    display_menu()
                 elif player_score[user] > scores[0][user]:
                     scores[0][user] = player_score[user]
                     update_highscores_sheet()
-                    high_scores()
+                    display_menu()
                 else:
                     display_menu()
     else:
@@ -327,11 +332,9 @@ def start_game(words):
         if user not in scores[0].keys():
             scores[0][user] = player_score[user]
             update_highscores_sheet()
-            high_scores()
         elif player_score[user] > scores[0][user]:
             scores[0][user] = player_score[user]
             update_highscores_sheet()
-            high_scores()
         else:
             display_menu()
         while True:
