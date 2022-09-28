@@ -144,13 +144,13 @@ def game_rules():
     print('\n')
     ready = input(
         '\033[93m Are you ready to start the game?\033[94m Yes or No\n'
-       ).upper()
+        ).upper()
 
     while rules:
-        if ready == 'Y' or ready == 'YES':
+        if ready == 'Y':
             get_user_name()
             rules = False
-        elif ready == 'N' or ready == 'NO':
+        elif ready == 'N':
             print(game_title)
             display_menu()
             rules = False
@@ -241,53 +241,50 @@ def start_game(words):
             "\033[93m Please enter a letter: \033[94m\n"
             ).upper()
         print("\n")
-        try:
-            if len(users_guess) > 1:
-                raise ValueError(
-                    f'\033[93m You can only guess 1 letter at a time '
-                    f'\033[93m You guessed \033[94m{len(users_guess)} letter.'
-                    )
-            elif not users_guess.isalpha():
-                raise ValueError(
-                    f'\033[93m You can only guess letter '
-                    f'\033[93m You guessed \033[94m{users_guess},'
-                    '\033[93mis not a letter.'
+        if len(users_guess) > 1:
+            print(
+                f'\033[93m You can only guess 1 letter at a time '
+                f'\033[93m You guessed \033[94m{len(users_guess)} letter.'
                 )
-            elif len(users_guess) == 1 and users_guess.isalpha():
-                if users_guess in guess_letter:
-                    raise ValueError(
-                        f'\033[93m You have already guessed'
-                        f'\033[94m {users_guess}.'
-                        )
-                    print('\033[93m You have these letters so far \033[94m')
-                    print(' '.join(guess_letter))
-                elif users_guess not in words:
-                    clear_terminal()
-                    print(game_title)
-                    print(
-                        f'\033[94m{users_guess} \033[1;31m is not in the word'
-                        )
-                    lives -= 1
-                    print(f'\033[0m Number of lives left: {lives} \n')
-                    guess_letter.append(users_guess)
-                    print('\033[93m You have these letters so far \033[94m')
-                    print(' '.join(sorted(guess_letter)))
-                else:
-                    clear_terminal()
-                    print(game_title)
-                    print(
-                        f'\033[94m{users_guess} \033[1;32m is in the word, '
-                        'Well done!!'
-                        )
-                    guess_letter.append(users_guess)
-                    print('\033[93mYou have these letters so far \033[94m')
-                    print(' '.join(sorted(guess_letter)))
-                    if users_guess in words_letter:
-                        words_letter.remove(users_guess)
-
-        except ValueError as err:
-            print(f'{err} \033[93m Please try again \033[94m')
-            continue
+        elif not users_guess.isalpha():
+            print(
+                f'\033[93m You can only guess letter '
+                f'\033[93m You guessed \033[94m{users_guess},'
+                '\033[93mis not a letter.'
+                )
+        elif len(users_guess) == 1 and users_guess.isalpha():
+            if users_guess in guess_letter:
+                print(
+                    f'\033[93m You have already guessed'
+                    f'\033[94m {users_guess}.'
+                    )
+                print('\033[93m You have these letters so far \033[94m')
+                print(' '.join(guess_letter))
+            elif users_guess not in words:
+                clear_terminal()
+                print(game_title)
+                print(
+                    f'\033[94m{users_guess} \033[1;31m is not in the word'
+                    )
+                lives -= 1
+                print(f'\033[0m Number of lives left: {lives} \n')
+                guess_letter.append(users_guess)
+                print('\033[93m You have these letters so far \033[94m')
+                print(' '.join(sorted(guess_letter)))
+            else:
+                clear_terminal()
+                print(game_title)
+                print(
+                    f'\033[94m{users_guess} \033[1;32m is in the word, '
+                    'Well done!!'
+                    )
+                guess_letter.append(users_guess)
+                print('\033[93mYou have these letters so far \033[94m')
+                print(' '.join(sorted(guess_letter)))
+                if users_guess in words_letter:
+                    words_letter.remove(users_guess)
+        else:
+            print('\033[93m Please try again \033[94m')
 
     if lives != 0:
         clear_terminal()
