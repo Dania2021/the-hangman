@@ -10,13 +10,13 @@ Visit the deployed site [The Hangman](https://the-hangman22.herokuapp.com/)
 
 ## CONTENTS
 
-* User Experience
- * User Goals
- * Project Goals
- * User Stories
+* [User Experience](#user-experience-ux)
+  * [User Goals](#user-goals)
+  * [Project Goals](#project-goals)
+  * [User Stories](#user-stories)
 * Design
- * Flowchart
- * Colour
+  * Flowchart
+  * Colour
 * Features
   * Welcome Screen
   * Start Game Screen
@@ -48,4 +48,31 @@ Visit the deployed site [The Hangman](https://the-hangman22.herokuapp.com/)
   * Bugs
 * Credits
 
+## User Experience (UX)
 
+  ### User Goals
+   * As a user I want to have fun.
+   * As a user I want the game to be challenging.
+   * Intuitive and responsive to user's interaction
+   * Easily navigated around
+   * High scores should be stored and accessible to other users to view it
+
+  ### Project Goals
+   * As the site owner I want the user to have a fun experience.
+   * As the site owner I want the game to be functional with no bugs or errors.
+
+  ### User Stories
+  As a user I want to
+   * See welcome page with menu option
+   * Know how the game works
+   * See list of 5 best players
+   * See my score
+   * be informed if my data input is not valid and why
+   * see which letters I have already guessed
+   * see the word being displayed for every correct guess
+   * be informed how many lives I have left after a wrong guess
+   * see a graphic visualising my lost lives
+   * learn the word to be guessed after losing the game
+   * see the full word displayed after completing the game successfully
+   * know when the game is over (won or lost)
+   * be able to restart the game or not when after it's finished
