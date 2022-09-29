@@ -8,5 +8,44 @@ It is a word guessing game. User can enter its name and choose between 2 difficu
 
 Visit the deployed site [The Hangman](https://the-hangman22.herokuapp.com/)
 
+## CONTENTS
+
+* User Experience
+ * User Goals
+ * Project Goals
+ * User Stories
+* Design
+ * Flowchart
+ * Colour
+* Features
+  * Welcome Screen
+  * Start Game Screen
+   * Username Screen
+   * Difficulty Level Screen
+   * Guessing Screen
+     * Correct Answer Message
+     * Incorrect Answer Message
+     * Invalid Guess
+     * Display of Hangman
+     * Win Screen
+     * Lose Screen
+  * Rules Screen
+  * High Scores Screen
+  * Quit Game Screen
+  * Extra Features
+* Technologies Used
+  * Laguages Used
+  * Frameworks, Libraries & Programs Used
+* Deployment & Local Development
+  * How to Fork
+  * How to Clone
+  * Setting up google sheets API
+  * Setting up Heroku
+* Testing
+  * Validator Tests
+  * Lighthouse Test
+  * Manual Testing
+  * Bugs
+* Credits
 
 
