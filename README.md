@@ -1,31 +1,12 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# The Hangman
 
-Welcome Dania2021,
+The Hangman is a Python terminal game, which runs on a mock terminal on Heroku.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+It is a word guessing game. User can enter its name and choose between 2 difficulty levels. Hangman game requires user to reveal the hidden word by guessing the individual letters. Player has 6 attempts per word, if the letter is in the word the letter is shown and another guess can be made. If the letter is wrong a visual of the traditional hangman man will start to appear, game continues until user either guess the correct word or lose all of its lives.
 
-## Reminders
+![Title image](/images/hangman-title-img.png)
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+Visit the deployed site [The Hangman](https://the-hangman22.herokuapp.com/)
 
-## Creating the Heroku app
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
 
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
