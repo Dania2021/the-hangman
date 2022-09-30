@@ -35,9 +35,9 @@ def clear_terminal():
 
 
 def update_highscores_sheet():
-    '''
+    """
     Add user name and score to google sheet
-    '''
+    """
     keys = [str(eachvalue) for eachvalue in scores[0].keys()]
     values = [str(eachvalue) for eachvalue in scores[0].values()]
     update_results = [{'range': 'A1:ZZZ1', 'values': [keys]},
@@ -46,10 +46,10 @@ def update_highscores_sheet():
 
 
 def high_scores():
-    '''
+    """
     Get and sort data from google sheet.
     Return top 5 highscore items.
-    '''
+    """
     scores = high_score.get_all_records()
     clear_terminal()
     print(game_title)
@@ -61,7 +61,7 @@ def high_scores():
     print('\n')
     while True:
         back = input(
-            '\033[93m Go back to main menu? (Press Y)\033[94m'
+            '\033[93m Go back to main menu? (Press Y)\033[94m\n '
             ).upper()
         if back == 'Y':
             clear_terminal()
@@ -84,7 +84,7 @@ def display_menu():
         print('\033[94m Press 2 \033[0m to view the rules')
         print('\033[94m Press 3 \033[0m to view high scores')
         print('\033[94m Press 4 \033[0m to quit the game')
-        option = input('\033[93m Press the number to continue\n\033[94m')
+        option = input('\033[93m Press the number to continue \033[94m\n ')
         if option == '1':
             get_user_name()
             game_options = False
@@ -97,7 +97,7 @@ def display_menu():
         elif option == '4':
             opt = input(
                 '\033[93m Are you sure you want to quit?'
-                '\033[94m Yes or No\n'
+                '\033[94m Yes or No\n '
                 ).upper()
             while game_options:
                 if opt == 'Y':
@@ -116,11 +116,11 @@ def display_menu():
                     print('\n')
                     print('\n')
                     opt = input(
-                        '\033[93m Press Y for Yes or N for No..\n\033[94m'
-                    )
+                        '\033[93m Press Y for Yes or N for No.. \033[94m\n '
+                    ).upper()
         else:
             print(
-                '\033[93m Did not press 1, 2 or 3...Please try again\n'
+                '\033[93m Did not press 1, 2, 3 or 4...Please try again\n'
                 )
 
 
@@ -143,7 +143,7 @@ def game_rules():
 
     print('\n')
     ready = input(
-        '\033[93m Are you ready to start the game?\033[94m Yes or No\n'
+        '\033[93m Are you ready to start the game?\033[94m Yes or No\n '
         ).upper()
 
     while rules:
@@ -159,7 +159,9 @@ def game_rules():
             print('\033[93m Invalid input please try again.\033[94m')
             print('\n')
             print('\n')
-            ready = input('\033[93m Press Y for Yes or N for No\033[94m \n')
+            ready = input(
+                '\033[93m Press Y for Yes or N for No\033[94m\n '
+                ).upper()
 
 
 def get_user_name():
@@ -184,7 +186,7 @@ def get_user_name():
             print('\033[93m Invalid input please try again.\033[94m')
             print('\n')
             print('\n')
-            print('\033[93m Name can only be letterrs.\033[94m\n')
+            print('\033[93m Name can only be letters.\033[94m\n')
 
 
 def difficulty_level():
@@ -234,13 +236,13 @@ def start_game(words):
             letter if letter in guess_letter else "_" for letter in words
             ]
         print(hangman_img(lives))
-        print("\n")
-        print(" ".join(hidden_word))
-        print("\n")
+        print('\n ')
+        print(' '.join(hidden_word))
+        print('\n')
         users_guess = input(
-            "\033[93m Please enter a letter: \033[94m\n"
+            '\033[93m Please enter a letter: \033[94m\n '
             ).upper()
-        print("\n")
+        print('\n')
         if len(users_guess) > 1:
             print(
                 f'\033[93m You can only guess 1 letter at a time '
@@ -258,7 +260,7 @@ def start_game(words):
                     f'\033[93m You have already guessed'
                     f'\033[94m {users_guess}.'
                     )
-                print('\033[93m You have these letters so far \033[94m')
+                print('\033[93m You have these letters so far \033[94m ')
                 print(' '.join(guess_letter))
             elif users_guess not in words:
                 clear_terminal()
@@ -267,19 +269,18 @@ def start_game(words):
                     f'\033[94m{users_guess} \033[1;31m is not in the word'
                     )
                 lives -= 1
-                print(f'\033[0m Number of lives left: {lives} \n')
+                print(f'\033[0mNumber of lives left: {lives} \n')
                 guess_letter.append(users_guess)
-                print('\033[93m You have these letters so far \033[94m')
+                print('\033[93mYou have these letters so far \033[94m ')
                 print(' '.join(sorted(guess_letter)))
             else:
                 clear_terminal()
-                print(game_title)
                 print(
-                    f'\033[94m{users_guess} \033[1;32m is in the word, '
+                    f'\033[94m{users_guess} \033[1;32mis in the word, '
                     'Well done!!'
                     )
                 guess_letter.append(users_guess)
-                print('\033[93mYou have these letters so far \033[94m')
+                print('\033[93mYou have these letters so far \033[94m ')
                 print(' '.join(sorted(guess_letter)))
                 if users_guess in words_letter:
                     words_letter.remove(users_guess)
@@ -290,10 +291,10 @@ def start_game(words):
         clear_terminal()
         print(game_title)
         print('\033[93m Congratulations! You WON')
-        print(f' You guessed the word {words} correctly \n')
+        print(f'You guessed the word \033[94m{words} correctly \n')
         while True:
             play_again_after_win = input(
-                '\033[93m Would you like to play again? ( Y / N ) \033[94m'
+                '\033[93m Would you like to play again? ( Y / N ) \033[94m\n '
             ).upper()
             if play_again_after_win == 'Y':
                 player_score[user] += 5
@@ -336,7 +337,7 @@ def start_game(words):
             display_menu()
         while True:
             play_again_after_lose = input(
-                '\033[93m Would you like to play again? ( Y / N ) \033[94m'
+                '\033[93m Would you like to play again? ( Y / N ) \033[94m\n '
             ).upper()
             if play_again_after_lose == 'Y':
                 difficulty_level()
