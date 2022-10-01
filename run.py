@@ -138,8 +138,11 @@ def game_rules():
         'at a time.\n * Type a letter of your choice and hit enter.\n * If '
         'your guess is correct, the letter will show within the hidden '
         'word.\n * If your guess is incorrect, a section of hangman will '
-        'appear.\n * Keep guessing until you guess the correct word'
-        'or you run out of tries')
+        'appear.\n * Keep guessing until you guess the correct word '
+        'or you run out of tries.\n * If user guess the correct word, '
+        'it will add 5 points to the final score.\n * If user accumulated '
+        'enough points it will be able to add its name to the high scores'
+        )
 
     print('\n')
     ready = input(
