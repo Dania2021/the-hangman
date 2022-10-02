@@ -33,9 +33,9 @@ Visit the deployed site [The Hangman](https://the-hangman22.herokuapp.com/)
   * High Scores Screen
   * Quit Game Screen
   * Extra Features
-* Technologies Used
-  * Laguages Used
-  * Frameworks, Libraries & Programs Used
+* [Technologies Used](#technologies-used)
+  * [Laguages Used](#languages-used)
+  * [Frameworks, Libraries & Programs Used](#framework-libraries--programs-used)
 * [Deployment & Local Development](#deployment--local-development)
   * [Deployment](#deployment)
     * [Setting up google sheets API](#setting-up-google-sheets-api)
@@ -79,6 +79,40 @@ Visit the deployed site [The Hangman](https://the-hangman22.herokuapp.com/)
    * know when the game is over (won or lost)
    * be able to restart the game or not when after it's finished
 
+
+## Technologies Used
+
+  * ### Languages Used
+
+    Python
+
+  * ### Framework, Libraries & Programs Used
+
+    * [Lucidchart](https://lucid.app/documents#/dashboard) -Used to create flowchart
+
+    * [Git](https://git-scm.com/) - Used for version control.
+     
+    * [Github](https://github.com/) - Used to save and store the files for website.
+
+    * [GitPod](https://gitpod.io/workspaces) - IDE used to create the site.
+
+    * [Google Sheets](https://docs.google.com/spreadsheets/u/0/) - To store information
+
+    * [Gspread](https://docs.gspread.org/en/latest/) - To store information
+
+    * [Random Library](https://docs.python.org/3/library/random.html) -Used to generate a random word
+
+    * [Os Library](https://docs.python.org/3/library/os.html) - Used to clear the console
+
+    * [Operator Library](https://docs.python.org/3/library/operator.html) - Used to sort a dictionary
+
+    * [Heroku](https://id.heroku.com/login) - To deploy project
+
+    * [Text to ASCII generator](http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20) - Used to make heading logo
+
+    * [Am I Responsive?](https://ui.dev/amiresponsive?)  Show of the mock terminal.
+
+ 
 ## Deployment & Local Development
 
   * ### Deployment
@@ -190,9 +224,9 @@ Visit the deployed site [The Hangman](https://the-hangman22.herokuapp.com/)
       1. Log in (or sign up) to GitHub.
       2. Go to the repository for this project, [The-Hangman repository](https://github.com/Dania2021/the-hangman).
       3. Click on the code button, select whether you would like to clone with HTTPS, SSH or GitHub CLI and copy the link shown.
-     4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
-     5. Type git clone into the command line and then paste the URL copied from GitHub.
-     6. Press enter and the local repository clone will be created.
+      4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
+      5. Type git clone into the command line and then paste the URL copied from GitHub.
+      6. Press enter and the local repository clone will be created.
 
      
      
