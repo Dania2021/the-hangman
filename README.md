@@ -172,7 +172,28 @@ Visit the deployed site [The Hangman](https://the-hangman22.herokuapp.com/)
        18. If you want to rebuild your app automatically you can also select the 'Enable Automatic Deploys' button which will then rebuild the app every time you push any changes.
 
 
-  
+  * ### Local Development
+
+    * #### How to Fork
+     
+      To fork the The-Hangman repository:
+
+      1. Log in (or sign up) to Github.
+      2. Go to the repository for this project, [The-Hangman repository](https://github.com/Dania2021/the-hangman).
+      3. Click the Fork button in the top right corner.
+
+   
+    * #### How to Clone
+
+      To clone the The-Hangman repository:
+
+      1. Log in (or sign up) to GitHub.
+      2. Go to the repository for this project, [The-Hangman repository](https://github.com/Dania2021/the-hangman).
+      3. Click on the code button, select whether you would like to clone with HTTPS, SSH or GitHub CLI and copy the link shown.
+     4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
+     5. Type git clone into the command line and then paste the URL copied from GitHub.
+     6. Press enter and the local repository clone will be created.
+
      
      
 
