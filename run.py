@@ -6,7 +6,7 @@ import random
 import operator
 import gspread
 from google.oauth2.service_account import Credentials
-from title import game_title
+from title import GAME_TITLE
 from gallows import hangman_img
 from words import word
 
@@ -52,7 +52,7 @@ def high_scores():
     """
     scores = high_score.get_all_records()
     clear_terminal()
-    print(game_title)
+    print(GAME_TITLE)
     print('\033[1m                  High Scores \033[93m\n\n')
     ordered_scores = (dict(sorted(scores[0].items(),
                       key=operator.itemgetter(1), reverse=True)[:5]))
@@ -65,7 +65,7 @@ def high_scores():
             ).upper()
         if back == 'Y':
             clear_terminal()
-            print(game_title)
+            print(GAME_TITLE)
             display_menu()
         else:
             print('\033[93m Please try again')
@@ -76,7 +76,7 @@ def display_menu():
     Display game header and choice of menu options
     """
     clear_terminal()
-    print(game_title)
+    print(GAME_TITLE)
     game_options = True
 
     while game_options:
@@ -108,7 +108,7 @@ def display_menu():
                     exit()
                 elif opt == 'N':
                     print('\n')
-                    print(game_title)
+                    print(GAME_TITLE)
                     break
                 else:
                     print('\n')
@@ -130,7 +130,7 @@ def game_rules():
     """
     clear_terminal()
     rules = True
-    print(game_title)
+    print(GAME_TITLE)
     print('')
     print('\033[1m                  Game Rules \033[93m\n\n')
     print(
@@ -154,7 +154,7 @@ def game_rules():
             get_user_name()
             rules = False
         elif ready == 'N':
-            print(game_title)
+            print(GAME_TITLE)
             display_menu()
             rules = False
         else:
@@ -173,7 +173,7 @@ def get_user_name():
     """
     global user
     clear_terminal()
-    print(game_title)
+    print(GAME_TITLE)
     user_name = True
 
     while user_name:
@@ -197,7 +197,7 @@ def difficulty_level():
     Gets level value from user and creates word list accordingly
     """
     clear_terminal()
-    print(game_title)
+    print(GAME_TITLE)
     choose = True
     while choose:
         choose_level = input(
@@ -233,7 +233,7 @@ def start_game(words):
     guess_letter = []
     words_letter = set(words)
     clear_terminal()
-    print(game_title)
+    print(GAME_TITLE)
     while lives > 0 and len(words_letter) > 0:
         hidden_word = [
             letter if letter in guess_letter else "_" for letter in words
@@ -267,7 +267,7 @@ def start_game(words):
                 print(' '.join(guess_letter))
             elif users_guess not in words:
                 clear_terminal()
-                print(game_title)
+                print(GAME_TITLE)
                 print(
                     f'\033[94m{users_guess} \033[1;31m is not in the word'
                     )
@@ -292,7 +292,7 @@ def start_game(words):
 
     if lives != 0:
         clear_terminal()
-        print(game_title)
+        print(GAME_TITLE)
         print('\033[93m Congratulations! You WON')
         print(f'You guessed the word \033[94m{words} correctly \n')
         while True:
@@ -320,7 +320,7 @@ def start_game(words):
                     display_menu()
     else:
         clear_terminal()
-        print(game_title)
+        print(GAME_TITLE)
         print(hangman_img(lives))
         print(
             f'\033[93m You are out of lives \n'
