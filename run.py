@@ -181,7 +181,8 @@ def get_user_name():
         if user.isalpha():
             print(f'\033[0m Welcome \033[94m{user}\033[0m, nice to meet you')
             player_score[user] = 0
-
+            print('\n')
+            input('\033[93m Press enter to continue')
             difficulty_level()
             user_name = False
         else:
@@ -351,5 +352,5 @@ def start_game(words):
                 print("\033[93m Please choose Y for Yes and N for No:")
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     display_menu()
