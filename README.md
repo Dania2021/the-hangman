@@ -80,6 +80,22 @@ Visit the deployed site [The Hangman](https://the-hangman22.herokuapp.com/)
    * be able to restart the game or not when after it's finished
 
 
+## Design
+
+  * ### Colour
+     I decided to add a color scheme to provide a better user experience. By showing incorrect guesses in red text and correct guesses in green text to make it clearer to the user.
+
+     * General text, Blue ('\033[1;34m'), Yellow('\033[93m') and White('\033[0m'). 
+     * Incorrect guesses, Red ('\033[1;31m').
+     * Correct guesses, Green (\033[1;32m').
+     * Bold('\033[1m') for game rules and high scores heading.
+
+  * ### Flowchart
+     I used [Lucidchart](https://lucid.app/documents#/dashboard) to help design the project and create the following flowchart.
+
+     ![Flowchart image](/images/hangman_flowchart.png)
+
+
 ## Technologies Used
 
   * ### Languages Used

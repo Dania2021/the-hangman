@@ -296,7 +296,7 @@ def start_game(words):
         clear_terminal()
         print(GAME_TITLE)
         print('\033[93m Congratulations! You WON')
-        print(f'You guessed the word \033[94m{words} correctly \n')
+        print(f' You guessed the word \033[94m{words} \033[93mcorrectly \n')
         while True:
             play_again_after_win = input(
                 '\033[93m Would you like to play again? ( Y / N ) \033[94m\n '
