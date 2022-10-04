@@ -131,6 +131,29 @@ Visit the deployed site [The Hangman](https://the-hangman22.herokuapp.com/)
        ![Game Start Image](/images/game-start-img.png)
 
 
+    * #### Correct Answer Message
+
+         When the user guess is valid and also correct, they are greeted with message praising them and stating that their guess is in the word. It also displays how many letters user has used so far and replace blank space with correct guess letter.
+
+         ![Correct Answer Image](/images/correct-guess-img.png)
+
+    * #### Incorrect Answer Message
+
+         When the user guess is valid but is not in the word, they are greeted with message stating that their guess was not in the word, therefore being incorrect user will lose a life and will display the next stage of hangman. It also displays how many lives are left and how many letters user has used so far
+
+         ![Incorrect Answer Image](/images/wrong-guess-img.png)
+
+    * #### Win Screen
+
+        If the user guesses all letter correctly it will take them to a screen that congratulates them and will ask the User to input a "Y" for Yes or "N" for No to either play again or exit the game, either options will store their username along with their score to a googlesheet document.
+
+        ![Win Screen Image](/images/win-msg-img.png)
+
+    * #### Lose Screen
+
+        The lose screen is displayed when the user has finally used up all of their lives and lets them know that they have lost the game. When this screen shows, it displays the last stage of the hangman (a stick figure being 'hung'). It also greets the user to an unfortunate message letting the user know that user run out of lives, it also display what the word was and a encouraging text to persuade the User to play again. This screen also display username with the score.
+
+         ![Lose Screen Image](/images/losing-msg-img.png)
         
 ## Technologies Used
 
