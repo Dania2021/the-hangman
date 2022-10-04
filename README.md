@@ -14,21 +14,20 @@ Visit the deployed site [The Hangman](https://the-hangman22.herokuapp.com/)
   * [User Goals](#user-goals)
   * [Project Goals](#project-goals)
   * [User Stories](#user-stories)
-* Design
-  * Flowchart
-  * Colour
+* [Design](#design)
+  * [Colour](#colour)
+  * [Flowchart](#flowchart)
 * Features
-  * Welcome Screen
-  * Start Game Screen
-   * Username Screen
-   * Difficulty Level Screen
-   * Guessing Screen
-     * Correct Answer Message
-     * Incorrect Answer Message
+  * [Welcome Screen](#welcome-screen)
+  * [Username Screen](#username-screen)
+   * [Difficulty Level Screen](#difficulty-level-screen)
+   * [Guessing Screen](#guessing-screen)
+     * [Correct Answer Message](#correct-answer-message)
+     * [Incorrect Answer Message](#incorrect-answer-message)
      * Invalid Guess
      * Display of Hangman
-     * Win Screen
-     * Lose Screen
+     * [Win Screen](#win-screen)
+     * [Lose Screen](#lose-screen)
   * Rules Screen
   * High Scores Screen
   * Quit Game Screen
@@ -96,6 +95,43 @@ Visit the deployed site [The Hangman](https://the-hangman22.herokuapp.com/)
      ![Flowchart image](/images/hangman_flowchart.png)
 
 
+## Features
+
+  * ### Welcome Screen
+
+     This is the first page you see when the app loads. The welcome screen will display the name of the game and ask user to press one of the four options :
+
+      1. Start the game
+      2. How to play
+      3. High Scores
+      4. Quit game
+
+      ![Welcome Screen Image](/images/welcome-screen-img.png)
+
+  * ### Username Screen
+
+      When user press 1 from the welcome screen then user is asked to input a Username so that the game can keep track of the score. If the User puts anything else other than letters, the game will display a text to the User, letting them know name can only be letters. It also display a welcome message to the user and reset the score.
+
+       ![Username Screen Image](/images/welcome-msg-img.png)
+
+  * ### Difficulty Level Screen
+
+      The user is then asked to choose the level of difficulty. There are two options available:
+       1. Easy
+       2. Hard
+
+       If the user selects easy then random word gets pick from words.py of length less than 5 and if the user selects hard then random word gets pick from words.py of length more than 4.
+
+       ![Difficulty Level Image](/images/level-img.png)
+
+  * ### Guessing Screen
+
+       The Guessing screen displays the hangman title, the first stage of the hangman game. Underneath the hangman display, the user is asked to enter a letter.
+
+       ![Game Start Image](/images/game-start-img.png)
+
+
+        
 ## Technologies Used
 
   * ### Languages Used
