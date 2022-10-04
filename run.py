@@ -236,7 +236,8 @@ def start_game(words):
     print(GAME_TITLE)
     while lives > 0 and len(words_letter) > 0:
         hidden_word = [
-            letter if letter in guess_letter else "_" for letter in words
+            letter if letter in guess_letter else
+            '\033[93m_' for letter in words
             ]
         print(hangman_img(lives))
         print('\n ')
