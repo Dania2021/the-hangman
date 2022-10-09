@@ -97,7 +97,7 @@ def display_menu():
         elif option == '4':
             opt = input(
                 '\033[93m Are you sure you want to quit?'
-                '\033[94m Yes or No\n '
+                '\033[94m (Y / N)\n '
                 ).upper()
             while game_options:
                 if opt == 'Y':
@@ -146,7 +146,7 @@ def game_rules():
 
     print('\n')
     ready = input(
-        '\033[93m Are you ready to start the game?\033[94m Yes or No\n '
+        '\033[93m Are you ready to start the game?\033[94m (Y / N)\n '
         ).upper()
 
     while rules:
@@ -256,7 +256,7 @@ def start_game(words):
         elif not users_guess.isalpha():
             print(
                 f'\033[93m You can only guess letter '
-                f'\033[93m You guessed \033[94m{users_guess},'
+                f'\033[93m You guessed \033[94m{users_guess}, '
                 '\033[93mis not a letter.'
                 )
         elif len(users_guess) == 1 and users_guess.isalpha():
@@ -343,7 +343,7 @@ def start_game(words):
         while True:
             play_again_after_lose = input(
                 '\033[93m Would you like to play again? ( Y / N ) \033[94m\n '
-            ).upper()
+                    ).upper()
             if play_again_after_lose == 'Y':
                 difficulty_level()
             elif play_again_after_lose == 'N':

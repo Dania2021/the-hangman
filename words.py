@@ -31,11 +31,11 @@ word = [
          'BALL',
          'VIDEO',
          'FLOOD',
-         'PEACE'
+         'PEACE',
          'ABANDONED',
          'ABIDING',
          'ACCEPTABLE',
-         'ABSORBED'
+         'ABSORBED',
          'ABNORMAL',
          'COMPETE',
          'UNLAWFUL',

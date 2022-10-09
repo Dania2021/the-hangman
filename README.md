@@ -14,7 +14,7 @@ Visit the deployed site [The Hangman](https://the-hangman22.herokuapp.com/)
   * [User Goals](#user-goals)
   * [Project Goals](#project-goals)
   * [User Stories](#user-stories)
-* [Design](#design)
+ * [Design](#design)
   * [Colour](#colour)
   * [Flowchart](#flowchart)
 * Features
@@ -24,14 +24,12 @@ Visit the deployed site [The Hangman](https://the-hangman22.herokuapp.com/)
    * [Guessing Screen](#guessing-screen)
      * [Correct Answer Message](#correct-answer-message)
      * [Incorrect Answer Message](#incorrect-answer-message)
-     * Invalid Guess
      * Display of Hangman
      * [Win Screen](#win-screen)
      * [Lose Screen](#lose-screen)
-  * Rules Screen
-  * High Scores Screen
-  * Quit Game Screen
-  * Extra Features
+  * [Rules Screen](#rules-screen)
+  * [High Scores Screen](#high-scores-screen)
+  * [Quit Game Screen](#quit-game-screen)
 * [Technologies Used](#technologies-used)
   * [Laguages Used](#languages-used)
   * [Frameworks, Libraries & Programs Used](#framework-libraries--programs-used)
@@ -97,6 +95,8 @@ Visit the deployed site [The Hangman](https://the-hangman22.herokuapp.com/)
 
 ## Features
 
+   I have used clear_terminal function to make it clearer for the user to read.
+
   * ### Welcome Screen
 
      This is the first page you see when the app loads. The welcome screen will display the name of the game and ask user to press one of the four options :
@@ -142,7 +142,7 @@ Visit the deployed site [The Hangman](https://the-hangman22.herokuapp.com/)
          When the user guess is valid but is not in the word, they are greeted with message stating that their guess was not in the word, therefore being incorrect user will lose a life and will display the next stage of hangman. It also displays how many lives are left and how many letters user has used so far
 
          ![Incorrect Answer Image](/images/wrong-guess-img.png)
-
+    
     * #### Win Screen
 
         If the user guesses all letter correctly it will take them to a screen that congratulates them and will ask the User to input a "Y" for Yes or "N" for No to either play again or exit the game, either options will store their username along with their score to a googlesheet document.
@@ -154,6 +154,26 @@ Visit the deployed site [The Hangman](https://the-hangman22.herokuapp.com/)
         The lose screen is displayed when the user has finally used up all of their lives and lets them know that they have lost the game. When this screen shows, it displays the last stage of the hangman (a stick figure being 'hung'). It also greets the user to an unfortunate message letting the user know that user run out of lives, it also display what the word was and a encouraging text to persuade the User to play again. This screen also display username with the score.
 
          ![Lose Screen Image](/images/losing-msg-img.png)
+
+  * ### Rules Screen
+
+      The rules screen explains to the user how the game is played and then asks the user if they are ready for the game.
+
+      ![Rules Screen Image](/images/rules-img.png)
+
+  * ### High Scores Screen
+
+       The Highscores screen will display the scores and the usernames of any of the users that have the top 5 scores and will continue to update through the googlesheet. This screen also has an option at the bottom of the screen to let the user know what to input to go back to the Welcome screen.
+
+      ![High Scores Screen Image](/images/high-score-img.png) 
+
+  * ### Quit Game Screen
+        
+      When the user press 3 from the welcome screen then user gets ask are you sure you want to quit. If the user selects 'Y' option then user exit the game and greets with a message that you have successfully quit and if user selects 'N' option then it will go to the welcome screen.
+
+       ![Quit Screen Image](/images/quit-img.png) 
+
+
         
 ## Technologies Used
 
