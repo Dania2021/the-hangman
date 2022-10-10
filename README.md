@@ -17,7 +17,7 @@ Visit the deployed site [The Hangman](https://the-hangman22.herokuapp.com/)
  * [Design](#design)
   * [Colour](#colour)
   * [Flowchart](#flowchart)
-* Features
+* [Features](#features)
   * [Welcome Screen](#welcome-screen)
   * [Username Screen](#username-screen)
    * [Difficulty Level Screen](#difficulty-level-screen)
