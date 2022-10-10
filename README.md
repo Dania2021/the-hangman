@@ -24,7 +24,7 @@ Visit the deployed site [The Hangman](https://the-hangman22.herokuapp.com/)
    * [Guessing Screen](#guessing-screen)
      * [Correct Answer Message](#correct-answer-message)
      * [Incorrect Answer Message](#incorrect-answer-message)
-     * Display of Hangman
+     * [Display of Hangman](#display-of-hangman)
      * [Win Screen](#win-screen)
      * [Lose Screen](#lose-screen)
   * [Rules Screen](#rules-screen)
@@ -142,6 +142,13 @@ Visit the deployed site [The Hangman](https://the-hangman22.herokuapp.com/)
          When the user guess is valid but is not in the word, they are greeted with message stating that their guess was not in the word, therefore being incorrect user will lose a life and will display the next stage of hangman. It also displays how many lives are left and how many letters user has used so far
 
          ![Incorrect Answer Image](/images/wrong-guess-img.png)
+
+
+    * #### Display of Hangman
+         
+         The user will be able to see their progress of the hangman lives. With each incorrect letter or guess, the hangman image display and will go to the next stage of the display until the user gets the word or runs out of lives.
+
+         ![Hangman stages Image](/images/life-stages.png)      
     
     * #### Win Screen
 
