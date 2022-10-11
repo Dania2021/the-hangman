@@ -330,6 +330,108 @@ Visit the deployed site [The Hangman](https://the-hangman22.herokuapp.com/)
       5. Type git clone into the command line and then paste the URL copied from GitHub.
       6. Press enter and the local repository clone will be created.
 
-    
+## Testing
+
+  * ### Manual Testing
+
+    1. The user is asked to Press the number on the welcome screen
+      
+       * First, I tested what would happen if the user typed anything other than 1, 2, 3 or 4: Error message shows, results were as expected.
+
+       ![Welcome Screen invalid input Image](/images/welcome-invalid.png)
+
+
+       * Next I tested what would happen if the user typed 1: go to the Username Screen, results were as expected.
+
+       * Then I tested what would happen if the user typed 2: go the Rules Screen, results were as expected.
+
+       * Then I tested what would happen if the user typed 3: go to the High Scores Screen, results were as expected.
+
+       * Last I tested what would happen if the user typed 4: Quit the game, results were as expected.
+
+    2. After reading the rules the user is asked if they are ready to start the game, Y for yes and N for no.   
+
+       * I tested what would happen if the user typed anything other than Y or N: Error message shows, results were as expected.
+
+       ![Rules invalid input Image](/images/rules-invalid.png)
+
+
+       * Next I tested what would happen if the user typed Y: go to the Username Screen, results were as expected.
+
+       * Last I tested what would happen if the user typed N: go to the Welcome Screen.
+
+    3. After viewing the high scores the user is asked go back to the main menu, press Y for yes.
+
+       * I tested what would happen if the user typed anything other than Y: Error message shows, results were as expected.
+
+       ![Back to main menu invalid input Image](/images/high-score-invalid.png)
+
+
+       * Next I tested what would happen if the user typed Y: go back to the Welcome Screen.
+
+    4. When user go the Username Screen, user is asked to enter your name .
+
+       * I tested what would happen if the user typed anything other than letter: Error message shows, results were as expected. 
+
+       ![Invalid username Image](/images/username-invalid.png)
+ 
+
+       * Next I tested what would if the user typed letters: display a welcome message with username and ask user to press enter to continue, results were as expected
+
+    5. When the user press enter from the Username Screen then after that user go to the Difficulty Level Screen and user is asked to choose your difficulty level, 1 for Easy and 2 for Hard.
+
+       * First, I tested what would happen if the user typed anything other than 1 or 2: Error message shows, results were as expected.
+
+       ![Invalid Difficulty Level Image](/images/level-invalid.png)
+
+
+       * Next I tested what would happen if the user typed 1: Start the game go to the Guessing Screen and guess the word with length of less than 5.
+
+       * Last I tested what would happen if the user typed 2: Start the game go to the Guessing Screen and guess the word with length of more than 4.
+
+    6. Once the user go to the Guessing Screen, user is asked to enter a letter.
+
+       * First I tested what would happen if the user typed anything other than letter: Error message shows, results were as expected.
+
+       ![Invalid guess Image](/images/guess-invalid.png)
+
+       
+       * Next I tested what would happen if the user typed more than 1 letter: Error message shows, results were as expected.
+
+       ![Invalid length of guess letter Image](/images/guess-invalid-letter.png)
+
+
+       * Next I tested what would happen if the user typed a valid but an incorrect guess: message shows, being incorrect user will lose a life and will display the next stage of hangman image and displays how many letters used so far, results were as expected.
+
+       * Then I tested what would happen if the user typed valid and correct guess: message shows, and displays how many letters used so far, results were as expected.
+
+       * Last I tested what would happen if the user typed a letter they had already guessed: You have already guessed that letter message shows, results were as expected.
+
+       ![Guess Letter repeated Answer Image](/images/guess-invalid-repeat.png)
+
+
+    7. When  user go to either Win Sreen or Lose Screen then the user is asked if they want to play again, Y for yes N for no.
+
+       * First I tested what would happen if the user typed anything other than Y or N: Error message shows, results were as expected.
+
+       ![Play again invalid input Image](/images/play-again-invalid.png)
+
+
+       * Next I tested what would happen if the user typed Y: go the Difficulty Level Screen, results were as expected.
+
+       * Last I tested what would happen if the user typed N: go the Welcome Screen, results were as expected.
+
+    8. When the user go to the Quit Game Screen, user is asked that are they sure to quit, Y for yes and N for no.
+
+       * First I tested what would happen if the user typed anything other than Y or N: Error message shows, results were as expected.
+
+       ![Quit Screen invalid input Image](/images/quit-invalid.png)
+
+
+       * Next I tested what would happen if the user typed Y: message displays, results were as expected.
+
+       * Last I tested what would happen if the user typed N: go back to the Welcome Sreen, results were as expected.
+
+
 
 
