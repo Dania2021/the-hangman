@@ -238,7 +238,7 @@ def start_game(words):
     while lives > 0 and len(words_letter) > 0:
         hidden_word = [
             letter if letter in guess_letter else
-            '\033[93m_' for letter in words
+            '_' for letter in words
             ]
         print(hangman_img(lives))
         print('\n ')
@@ -251,13 +251,14 @@ def start_game(words):
         if len(users_guess) > 1:
             print(
                 f'\033[93m You can only guess 1 letter at a time '
-                f'\033[93m You guessed \033[94m{len(users_guess)} letter.'
+                f'\033[93m You guessed \033[94m{len(users_guess)}'
+                f' letter.\033[94m'
                 )
         elif not users_guess.isalpha():
             print(
                 f'\033[93m You can only guess letter '
                 f'\033[93m You guessed \033[94m{users_guess}, '
-                '\033[93mis not a letter.'
+                '\033[93mis not a letter.\033[94m'
                 )
         elif len(users_guess) == 1 and users_guess.isalpha():
             if users_guess in guess_letter:
@@ -320,6 +321,11 @@ def start_game(words):
                     display_menu()
                 else:
                     display_menu()
+            else:
+                print('\033[93m Invalid input please try again.\033[94m')
+                print('\n')
+                print('\n')
+                print("\033[93m Please choose Y for Yes and N for No:")
     else:
         clear_terminal()
         print(GAME_TITLE)
@@ -349,6 +355,9 @@ def start_game(words):
             elif play_again_after_lose == 'N':
                 display_menu()
             else:
+                print('\033[93m Invalid input please try again.\033[94m')
+                print('\n')
+                print('\n')
                 print("\033[93m Please choose Y for Yes and N for No:")
 
 

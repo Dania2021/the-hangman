@@ -330,6 +330,6 @@ Visit the deployed site [The Hangman](https://the-hangman22.herokuapp.com/)
       5. Type git clone into the command line and then paste the URL copied from GitHub.
       6. Press enter and the local repository clone will be created.
 
-     
-     
+    
+
 
