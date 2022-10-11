@@ -177,7 +177,7 @@ def get_user_name():
     user_name = True
 
     while user_name:
-        user = input('\033[93m Please enter your name.\033[94m\n ')
+        user = input('\033[93m Please enter your name.\033[94m\n ').strip()
         if user.isalpha():
             print(f'\033[0m Welcome \033[94m{user}\033[0m, nice to meet you')
             player_score[user] = 0
