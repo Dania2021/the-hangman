@@ -46,6 +46,7 @@ Visit the deployed site [The Hangman](https://the-hangman22.herokuapp.com/)
   * [Manual Testing](#manual-testing)
   * [Bugs](#bugs)
 * Credits
+* [Acknowledgements](#acknowledgements)
 
 ## User Experience (UX)
 
@@ -472,6 +473,13 @@ Visit the deployed site [The Hangman](https://the-hangman22.herokuapp.com/)
   ![Game no issue Image](/images/hangman-no-issue.png)
 
   ![Game issue Image](/images/hangman-issue.png)
+
+## Acknowledgements
+
+The Hangman game was created as my third portfolio project. I would like to thank my mentor Marcel Mulders for his helpful feedback and encouragement throughout the development process. I would also like to thank tutor of code institute for their support. I'd like to thank fellow Code Institute students in May 2022 class at code institute.
+
+Dania Khanam
+
 
 
 
