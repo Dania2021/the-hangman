@@ -1,7 +1,7 @@
 """
 All imports
 """
-import os
+import os   # credit to stackoverflow.com
 import random
 import operator
 import gspread
@@ -10,6 +10,7 @@ from title import GAME_TITLE
 from gallows import hangman_img
 from words import word
 
+# code taken from love-sandwiches project.
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -31,6 +32,8 @@ def clear_terminal():
     """
     clear the terminal
     """
+    # This line is credited to
+    # https://stackoverflow.com/questions/2084508/clear-terminal-in-python
     os.system("cls" if os.name == "nt" else "clear")
 
 
@@ -54,6 +57,8 @@ def high_scores():
     clear_terminal()
     print(GAME_TITLE)
     print('\033[1m                  High Scores \033[93m\n\n')
+    # This line is credited to
+    # https://stackoverflow.com/questions/27447953/how-to-sort-this-list-by-the-highest-score
     ordered_scores = (dict(sorted(scores[0].items(),
                       key=operator.itemgetter(1), reverse=True)[:5]))
     for key, val in ordered_scores.items():
@@ -68,6 +73,7 @@ def high_scores():
             print(GAME_TITLE)
             display_menu()
         else:
+            # If users input is not valid:
             print('\033[93m Please try again')
 
 
@@ -111,6 +117,7 @@ def display_menu():
                     print(GAME_TITLE)
                     break
                 else:
+                    # If users input is not valid:
                     print('\n')
                     print('\033[93m Invalid input please try again.\n\033[94m')
                     print('\n')
@@ -119,6 +126,7 @@ def display_menu():
                         '\033[93m Press Y for Yes or N for No.. \033[94m\n '
                     ).upper()
         else:
+            # If users input is not valid:
             print(
                 '\033[93m Did not press 1, 2, 3 or 4...Please try again\n'
                 )
@@ -158,6 +166,7 @@ def game_rules():
             display_menu()
             rules = False
         else:
+            # If users input is not valid:
             print('\n')
             print('\033[93m Invalid input please try again.\033[94m')
             print('\n')
@@ -177,6 +186,7 @@ def get_user_name():
     user_name = True
 
     while user_name:
+        # Strip takes away the spaces when writing the name
         user = input('\033[93m Please enter your name.\033[94m\n ').strip()
         if user.isalpha():
             print(f'\033[0m Welcome \033[94m{user}\033[0m, nice to meet you')
@@ -186,6 +196,7 @@ def get_user_name():
             difficulty_level()
             user_name = False
         else:
+            # If users input is not valid:
             print('\n')
             print('\033[93m Invalid input please try again.\033[94m')
             print('\n')
@@ -216,6 +227,7 @@ def difficulty_level():
             start_game(words)
             choose = False
         else:
+            # If users input is not valid:
             print('\n')
             print('\033[93m Invalid input please try again.\033[94m')
             print('\n')
@@ -229,6 +241,9 @@ def difficulty_level():
 def start_game(words):
     """
     Starts the game by asking user for letter input
+    If user guess the correct word then 5 points are added to the score
+    Ask user to continue upon game end and validate for user input.
+    Add user score in high scores if enough points accumulated.
     """
     lives = 6
     guess_letter = []
@@ -244,24 +259,29 @@ def start_game(words):
         print('\n ')
         print(' '.join(hidden_word))
         print('\n')
+        # User ask to enter a letter
         users_guess = input(
             '\033[93m Please enter a letter: \033[94m\n '
             ).upper()
         print('\n')
         if len(users_guess) > 1:
+            # If the user guess two letter
             print(
                 f'\033[93m You can only guess 1 letter at a time '
                 f'\033[93m You guessed \033[94m{len(users_guess)}'
                 f' letter.\033[94m'
                 )
         elif not users_guess.isalpha():
+            # If the user guess is not a letter
             print(
                 f'\033[93m You can only guess letter '
                 f'\033[93m You guessed \033[94m{users_guess}, '
                 '\033[93mis not a letter.\033[94m'
                 )
+        # If users guess is valid input:
         elif len(users_guess) == 1 and users_guess.isalpha():
             if users_guess in guess_letter:
+                # If the user has already guessed this letter:
                 print(
                     f'\033[93m You have already guessed'
                     f'\033[94m {users_guess}.'
@@ -269,6 +289,7 @@ def start_game(words):
                 print('\033[93m You have these letters so far \033[94m ')
                 print(' '.join(guess_letter))
             elif users_guess not in words:
+                # If the user guess is not in the word:
                 clear_terminal()
                 print(GAME_TITLE)
                 print(
@@ -280,6 +301,7 @@ def start_game(words):
                 print('\033[93mYou have these letters so far \033[94m ')
                 print(' '.join(sorted(guess_letter)))
             else:
+                # If the user guess a correct letter:
                 clear_terminal()
                 print(
                     f'\033[94m{users_guess} \033[1;32mis in the word, '
@@ -291,9 +313,11 @@ def start_game(words):
                 if users_guess in words_letter:
                     words_letter.remove(users_guess)
         else:
+            # If users input is not valid:
             print('\033[93m Please try again \033[94m')
 
     if lives != 0:
+        # If the user wins and gets the whole word:
         clear_terminal()
         print(GAME_TITLE)
         print('\033[93m Congratulations! You WON')
@@ -322,11 +346,13 @@ def start_game(words):
                 else:
                     display_menu()
             else:
+                # If users input is not valid:
                 print('\033[93m Invalid input please try again.\033[94m')
                 print('\n')
                 print('\n')
                 print("\033[93m Please choose Y for Yes and N for No:")
     else:
+        # If the user runs out of lives:
         clear_terminal()
         print(GAME_TITLE)
         print(hangman_img(lives))
@@ -355,6 +381,7 @@ def start_game(words):
             elif play_again_after_lose == 'N':
                 display_menu()
             else:
+                # If users input is not valid:
                 print('\033[93m Invalid input please try again.\033[94m')
                 print('\n')
                 print('\n')
