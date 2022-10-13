@@ -474,6 +474,17 @@ Visit the deployed site [The Hangman](https://the-hangman22.herokuapp.com/)
 
   ![Game issue Image](/images/hangman-issue.png)
 
+## Credits
+
+  ### Code
+
+   * The code to clear the console is credited to [Stackoverflow.com](https://stackoverflow.com/questions/2084508/clear-terminal-in-python).
+   
+   * The code linking the APIs is credited to [The Code Institute](https://github.com/Code-Institute-Solutions/love-sandwiches-p5-sourcecode/blob/master/01-getting-set-up/02-connecting-oto-our-api-with-python/run.py) from their 'Love Sandwiches' project.
+
+   * The code used to sort the dictionary by its highest scores is credited by [Stackoverflow](https://stackoverflow.com/questions/27447953/how-to-sort-this-list-by-the-highest-score)
+
+
 ## Acknowledgements
 
 The Hangman game was created as my third portfolio project. I would like to thank my mentor Marcel Mulders for his helpful feedback and encouragement throughout the development process. I would also like to thank tutor of code institute for their support. I'd like to thank fellow Code Institute students in May 2022 class at code institute.
