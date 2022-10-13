@@ -30,6 +30,7 @@ Visit the deployed site [The Hangman](https://the-hangman22.herokuapp.com/)
   * [Rules Screen](#rules-screen)
   * [High Scores Screen](#high-scores-screen)
   * [Quit Game Screen](#quit-game-screen)
+  * [Future Implementation](#future-implementation)
 * [Technologies Used](#technologies-used)
   * [Laguages Used](#languages-used)
   * [Frameworks, Libraries & Programs Used](#framework-libraries--programs-used)
@@ -45,7 +46,7 @@ Visit the deployed site [The Hangman](https://the-hangman22.herokuapp.com/)
   * [Lighthouse Test](#lighthouse-tests)
   * [Manual Testing](#manual-testing)
   * [Bugs](#bugs)
-* Credits
+* [Credits](#credits)
 * [Acknowledgements](#acknowledgements)
 
 ## User Experience (UX)
@@ -181,7 +182,9 @@ Visit the deployed site [The Hangman](https://the-hangman22.herokuapp.com/)
 
        ![Quit Screen Image](/images/quit-img.png) 
 
+  * ### Future Implementation
 
+      Possibly to create user page that prompts the user to create a login username and a PIN code and then stored in google sheets. 
         
 ## Technologies Used
 
@@ -458,7 +461,7 @@ Visit the deployed site [The Hangman](https://the-hangman22.herokuapp.com/)
 
        * Next I tested what would happen if the user typed Y: message displays, results were as expected.
 
-       * Last I tested what would happen if the user typed N: go back to the Welcome Sreen, results were as expected.
+       * Last I tested what would happen if the user typed N: go back to the Welcome Screen, results were as expected.
 
   ### Bugs
 
