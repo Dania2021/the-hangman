@@ -67,15 +67,15 @@ Visit the deployed site [The Hangman](https://the-hangman22.herokuapp.com/)
    * Know how the game works
    * See list of 5 best players
    * See my score
-   * be informed if my data input is not valid and why
-   * see which letters I have already guessed
-   * see the word being displayed for every correct guess
-   * be informed how many lives I have left after a wrong guess
-   * see a graphic visualising my lost lives
-   * learn the word to be guessed after losing the game
-   * see the full word displayed after completing the game successfully
-   * know when the game is over (won or lost)
-   * be able to restart the game or not when after it's finished
+   * Be informed if my data input is not valid and why
+   * See which letters I have already guessed
+   * See the word being displayed for every correct guess
+   * Be informed how many lives I have left after a wrong guess
+   * See a graphic visualising my lost lives
+   * Learn the word to be guessed after losing the game
+   * See the full word displayed after completing the game successfully
+   * Know when the game is over (won or lost)
+   * Be able to restart the game or not when after it's finished
 
 
 ## Design
@@ -171,7 +171,7 @@ Visit the deployed site [The Hangman](https://the-hangman22.herokuapp.com/)
 
   * ### High Scores Screen
 
-       The Highscores screen will display the scores and the usernames of any of the users that have the top 5 scores and will continue to update through the googlesheet. This screen also has an option at the bottom of the screen to let the user know what to input to go back to the Welcome screen.
+       The High scores screen will display the scores and the usernames of any of the users that have the top 5 scores and will continue to update through the googlesheet. This screen also has an option at the bottom of the screen to let the user know what to input to go back to the Welcome screen.
 
       ![High Scores Screen Image](/images/high-score-img.png) 
 
@@ -333,7 +333,7 @@ Visit the deployed site [The Hangman](https://the-hangman22.herokuapp.com/)
 
 ## Testing
 
-  Bugs and errors encountered during coding of project were solved through contiuned testing throught the development. Using print statements and through git terminal python run.py
+  Bugs and errors encountered during coding of project were solved through continued testing through the development. Using print statements and through git terminal python run.py
 
    * Checked that when I get a score, it would update automatically in the googlesheets file.
 
@@ -438,7 +438,7 @@ Visit the deployed site [The Hangman](https://the-hangman22.herokuapp.com/)
        ![Guess Letter repeated Answer Image](/images/guess-invalid-repeat.png)
 
 
-  7. When  user go to either Win Sreen or Lose Screen then the user is asked if they want to play again, Y for yes N for no.
+  7. When  user go to either Win Screen or Lose Screen then the user is asked if they want to play again, Y for yes N for no.
 
        * First I tested what would happen if the user typed anything other than Y or N: Error message shows, results were as expected.
 
